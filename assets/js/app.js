@@ -23,6 +23,7 @@ function colorItemsShow() {
     color_list.appendChild(colorItem(item));
   }
   isColorAvailable();
+  copyColorCode();
 }
 
 // eyeDropper picked a color code
@@ -60,8 +61,24 @@ function isColorAvailable() {
 
 // clear saved or available colors
 function clearAllColors() {
-  savedColors = [];
-  localStorage.setItem("picked-colors", JSON.stringify(savedColors));
-  colorItemsShow();
-  isColorAvailable();
+  if (confirm("Are you sure? Do you want to delete color collections.")) {
+    savedColors = [];
+    localStorage.setItem("picked-colors", JSON.stringify(savedColors));
+    colorItemsShow();
+    isColorAvailable();
+  }
+}
+
+// copy color code
+function copyColorCode() {
+  const color_list = document.querySelectorAll("ul.color_list li");
+  color_list.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      try {
+        navigator.clipboard.writeText(e.target.title);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
 }
