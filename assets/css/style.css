@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center /
+    cover no-repeat fixed;
+}
+/* color picker */
+.color_picker {
+  width: 308px;
+  background: #f3f3f3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+}
+/* color picker active and is Able colors */
+.color_picker.active {
+  padding: 1rem;
+}
+.color_picker.active .color_picker_top {
+  margin: -1rem -1rem 0.5rem -1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.color_picker_top {
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.color_picker_top div span {
+  margin-right: 1rem;
+  cursor: pointer;
+  color: #505050;
+}
+.color_picker_top div span.code {
+  color: #6800ff;
+  font-weight: bold;
+}
+.color_picker_top img {
+  cursor: pointer;
+  width: 24px;
+  margin-left: 0.5rem;
+}
+
+/* color items */
+ul.color_list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+}
+ul.color_list li {
+  cursor: pointer;
+  list-style: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+ul.color_list li:nth-child(even) {
+  background-color: #4ffd1a;
+}
+ul.color_list li:nth-child(odd) {
+  background-color: red;
+}

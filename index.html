@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color picker extension</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <div class="color_picker">
+    <div class="color_picker_top">
+      <!-- which color code? -->
+      <div>
+        <span class="code hex">HEX</span>
+        <span class="rgb">RGB</span>
+      </div>
+      <!-- color picked and clear -->
+      <div>
+        <img id="clear" title="clear colors" src="./assets/icons/clear.png" alt="clear colors">
+        <img id="pick_color" title="pick a color" src="./assets/icons/icon.png" alt="color picker">
+      </div>
+    </div>
+    <!-- show all colors saved -->
+    <ul class="color_list"></ul>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
