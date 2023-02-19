@@ -34,7 +34,7 @@ async function activeEyeDropper() {
     if (savedColors.includes(sRGBHex)) return;
     savedColors.push(sRGBHex);
     localStorage.setItem("picked-colors", JSON.stringify(savedColors));
-
+    navigator.clipboard.writeText(sRGBHex);
     colorItemsShow();
   } catch (error) {
     console.log(error);
