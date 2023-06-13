@@ -69,16 +69,21 @@ function clearAllColors() {
   }
 }
 
-// copy color code
+// * Improved this function
+// power by https://twitter.com/wydmanski_/status/1668293354554048516/photo/1
 function copyColorCode() {
-  const color_list = document.querySelectorAll("ul.color_list li");
-  color_list.forEach((item) => {
-    item.addEventListener("click", function (e) {
+  const color_list = document.querySelector("ul.color_list");
+
+  color_list.addEventListener("click", function (e) {
+    const targetElement = e.target;
+
+    if (targetElement.tagName === "LI") {
+      console.log("clicked");
       try {
-        navigator.clipboard.writeText(e.target.title);
+        navigator.clipboard.writeText(targetElement.title);
       } catch (error) {
         console.log(error);
       }
-    });
+    }
   });
 }
